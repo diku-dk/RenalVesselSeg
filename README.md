@@ -2,11 +2,9 @@
 
 
 ---
-
 ##  Backbone model: CycSeg: 3D CycleGAN with an addtional segmentation branch using U-Net
-
-
 ---
+
 ## Quick Start
 #### Installation
 
