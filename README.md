@@ -146,3 +146,17 @@ and will be saved at ```Test/A/pred```
 Please note that you will need to specify ```v_num``` (version number) generated during training 
 to load the corresponding model, otherwise it will load the latest one under ```src/cycle_GAN/logs/CycleGAN```.
 
+
+### Sample Result
+Sample results are in ```sample_res```
+* ```raw``` subfolder includes some prediction results of our pipeline
+
+* ```ccd``` subfolder includes the results after a simple connected component post-processing
+
+
+Raw result           |  Result after a simple CCD
+:-------------------------:|:-------------------------:
+![Fig6](vis/1.png) |  ![Fig6](vis/1ccd.png)
+![Fig6](vis/2.png) |  ![Fig6](vis/2ccd.png)
+
+
