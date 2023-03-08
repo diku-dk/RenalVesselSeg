@@ -1,0 +1,14 @@
+torchvision
+pytorch-lightning
+numpy
+matplotlib
+torchio
+tqdm
+pandas
+monai
+pillow
+scikit-image
+seaborn
+# lie_learn
+
+# conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
