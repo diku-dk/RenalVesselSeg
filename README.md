@@ -110,11 +110,14 @@ python train3D.py
 cd RenalVesselSeg/src/cycle_GAN
 python train2D.py
 ```
+
 ---
+
 We have not integrated ```argparse``` to the entry code file. 
 So you will just need to go to the main file (```train3D.py``` or ```train2D.py```) 
 to specify the root path (by default they are under ```./data_folder/```) or make any changes to the parameters, 
 e.g., number of filters, network depth, patch size, weighting factors, etc. We will integrate this functionality in the future.
+
 ---
 
 ![](figs/training_pipeline.jpg)
@@ -144,14 +147,4 @@ and will be saved at ```Test/A/pred```
 
 Please note that you will need to specify ```v_num``` (version number) generated during training 
 to load the corresponding model, otherwise it will load the latest one under ```src/cycle_GAN/logs/CycleGAN```.
-
-### Sample Result
-
-* ```results``` folder includes some prediction results of our pipeline
-
-* ```results_ccd``` folder includes the results after a simple connected component post-processing
-
-
-
-![Fig6](https://user-images.githubusercontent.com/30265621/215486601-7702284b-639e-47ff-a787-15cdc5b95e91.jpg)
 
