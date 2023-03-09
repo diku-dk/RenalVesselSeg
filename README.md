@@ -46,7 +46,7 @@ as well as the synthesized results will be made available upon acceptance of the
 
 *  2D and 3D CycleGAN models are available at ```src/cycle_GAN/cycleGAN_PL.py``` and ```src/cycle_GAN/CycleGAN3D.py```
 
-*  The final CycSeg models (CycleGAN with additional segmentation branch) at ```src/cycle_GAN/CycleGAN_w_UNet2D.py``` and ```src/cycle_GAN/CycleGAN_w_UNet.py```
+*  The final 2D and 3D CycSeg models (CycleGAN with additional segmentation branch) at ```src/cycle_GAN/CycleGAN_w_UNet2D.py``` and ```src/cycle_GAN/CycleGAN_w_UNet.py```
 
 ---
 
@@ -75,8 +75,8 @@ unlabeld real images must be stored in ```data_folder``` under the following str
 |- Test/
 |--- A/
 |------ images/
-|--------- image1.nii.gz
-|--------- image5.nii.gz
+|--------- image2.nii.gz
+|--------- image3.nii.gz
 
 ```
 
@@ -92,7 +92,7 @@ All 3D images must be stored in the ``.nii``/```.nii.gz``` format while 2D image
 Currently, it only works for gray-scale images with a binary segmentation task. 
 Therefore, the image should either not have an additional dimension or must have an additional dimension of length 1.
 label at a given voxel should be an integer representing the class at the given position, 
-with foreground class denoted '1' and background class denoted '0'.
+with the foreground class denoted '1' and background class denoted '0'.
 
 
 
