@@ -115,11 +115,11 @@ cd RenalVesselSeg/src/cycle_GAN
 python train2D.py
 ```
 
----
 We have not integrated ```argparse``` to the entry code file. 
 So you will just need to go to the main file (```train3D.py``` or ```train2D.py```) 
 to specify the root path (by default they are under ```./data_folder/```) or make any changes to the parameters, 
 e.g., number of filters, network depth, patch size, weighting factors, etc. We will integrate this functionality in the future.
+
 ---
 
 ![](figs/training_pipeline.jpg)
