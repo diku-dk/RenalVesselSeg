@@ -2,7 +2,9 @@
 
 
 ---
+
 ##  Backbone model: CycSeg: 3D CycleGAN with an addtional segmentation branch using U-Net
+
 ---
 
 ## Quick Start
@@ -12,10 +14,14 @@
 # From GitHub
 git clone https://github.com/miccai2023anony/RenalVesselSeg
 
+# create new conda environment
+conda create -n cycseg python=3.9
+conda activate cycseg
+
 # install pytorch related packages (you might need to change cuda version according to your environment)
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia 
 
-# install other packages and path setup
+# install other packages and setup path
 pip install -e RenalVesselSeg
 ```
 
@@ -35,7 +41,7 @@ to do correct import in the python files
 [//]: # (which will probably be made available upon acceptance.)
 
 The code for the reconstructing vascular tree (based on Global Constructive Optimization) 
-as well as the synthesized results will be made available upon acceptance of the previous paper 
+as well as the synthesized results (tree structure in .vtk format) will be made available upon acceptance of the previous paper 
 (attached in appendix currently due to double-blind requirement). 
 
 #### Here this GitHub repo will include all the deep learning part, i.e., code for constructing, training and applying the deep learning models.
@@ -75,8 +81,8 @@ unlabeld real images must be stored in ```data_folder``` under the following str
 |- Test/
 |--- A/
 |------ images/
-|--------- image2.nii.gz
-|--------- image3.nii.gz
+|--------- image1.nii.gz
+|--------- image5.nii.gz
 
 ```
 
@@ -92,7 +98,7 @@ All 3D images must be stored in the ``.nii``/```.nii.gz``` format while 2D image
 Currently, it only works for gray-scale images with a binary segmentation task. 
 Therefore, the image should either not have an additional dimension or must have an additional dimension of length 1.
 label at a given voxel should be an integer representing the class at the given position, 
-with the foreground class denoted '1' and background class denoted '0'.
+with foreground class denoted '1' and background class denoted '0'.
 
 
 
@@ -108,14 +114,11 @@ python train3D.py
 cd RenalVesselSeg/src/cycle_GAN
 python train2D.py
 ```
-
 ---
-
 We have not integrated ```argparse``` to the entry code file. 
 So you will just need to go to the main file (```train3D.py``` or ```train2D.py```) 
 to specify the root path (by default they are under ```./data_folder/```) or make any changes to the parameters, 
 e.g., number of filters, network depth, patch size, weighting factors, etc. We will integrate this functionality in the future.
-
 ---
 
 ![](figs/training_pipeline.jpg)
@@ -146,7 +149,6 @@ and will be saved at ```Test/A/pred```
 Please note that you will need to specify ```v_num``` (version number) generated during training 
 to load the corresponding model, otherwise it will load the latest one under ```src/cycle_GAN/logs/CycleGAN```.
 
-
 ### Sample Result
 Sample results are in ```sample_res```
 * ```raw``` subfolder includes some prediction results of our pipeline
@@ -158,5 +160,4 @@ Raw result           |  Result after a simple CCD
 :-------------------------:|:-------------------------:
 ![Fig6](vis/1.png) |  ![Fig6](vis/1ccd.png)
 ![Fig6](vis/2.png) |  ![Fig6](vis/2ccd.png)
-
 
