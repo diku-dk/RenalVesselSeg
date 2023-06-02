@@ -36,13 +36,8 @@ to do correct import in the python files
 
 [//]: # (Please follow for detailed explanation of renal blood vessels reconstruction. )
 
-[//]: # (You will need to consult its authors for the code of constructing the tree structure or output files,)
+The code for the sythesis of vascular trees is available at https://github.com/diku-dk/RenalArterialRecon. Please follow the instruction and the modifications over the boundary conditions (input parameters) given in the supplementary material for building venous tree instead of arterial tree structures.
 
-[//]: # (which will probably be made available upon acceptance.)
-
-The code for the reconstructing vascular tree (based on Global Constructive Optimization) 
-as well as the synthesized results (tree structure in .vtk format) will be made available upon acceptance of the previous paper 
-(attached in appendix currently due to double-blind requirement). 
 
 #### Here this GitHub repo will include all the deep learning part, i.e., code for constructing, training and applying the deep learning models.
 
