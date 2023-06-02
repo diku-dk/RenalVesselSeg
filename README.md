@@ -76,8 +76,8 @@ unlabeld real images must be stored in ```data_folder``` under the following str
 |- Test/
 |--- A/
 |------ images/
-|--------- image1.nii.gz
-|--------- image5.nii.gz
+|--------- image3.nii.gz
+|--------- image4.nii.gz
 
 ```
 
